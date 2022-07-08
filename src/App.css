@@ -1,0 +1,6 @@
+.App {
+  text-align: center;
+}
+
+@import url("components/styles/header.css");
+@import url("components/styles/books.css");
