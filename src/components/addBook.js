@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const AddBook = (props) => {
   const [inputText, setInputText] = useState({
@@ -13,10 +14,12 @@ const AddBook = (props) => {
     });
   };
 
+  const { addBookProps } = props;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputText.title.trim() && inputText.author.trim()) {
-      props.addBookProps(inputText.title, inputText.author);
+      addBookProps(inputText.title, inputText.author);
       setInputText({
         title: '',
         author: '',
@@ -45,6 +48,10 @@ const AddBook = (props) => {
       <button type="submit" className="input-submit">Submit</button>
     </form>
   );
+};
+
+AddBook.propTypes = {
+  addBookProps: PropTypes.func.isRequired,
 };
 
 export default AddBook;
