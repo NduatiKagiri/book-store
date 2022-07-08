@@ -1,0 +1,63 @@
+header {
+  width: 88%;
+  height: 65px;
+  background: #fff 0% 0% no-repeat padding-box;
+  box-shadow: 0 3px 15px #00000029;
+  opacity: 1;
+  padding: 10px 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header div {
+  width: 40%;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  height: 70%;
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.nav-logo h3 {
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 20px;
+  color: blue;
+  text-decoration: none;
+}
+
+nav {
+  width: 40%;
+}
+
+nav .nav-links-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav-links-list li {
+  list-style: none;
+  align-items: center;
+}
+
+.nav-link {
+  width: 64px;
+  height: 21px;
+  text-align: center;
+  text-decoration: none;
+  font: normal normal 600 20px/21px 'Rubik', sans-serif;
+  letter-spacing: 0;
+  color: #000;
+  opacity: 1;
+  margin-left: 8px;
+}
