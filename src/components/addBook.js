@@ -1,29 +1,21 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/books';
 
-const AddBook = (props) => {
-  const [inputText, setInputText] = useState({
-    title: '',
-    author: '',
-  });
-
-  const onChange = (e) => {
-    setInputText({
-      ...inputText,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const { addBookProps } = props;
-
+const AddBook = () => {
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputText.title.trim() && inputText.author.trim()) {
-      addBookProps(inputText.title, inputText.author);
-      setInputText({
-        title: '',
-        author: '',
-      });
+    if (e.target.title.value && e.target.author.value) {
+      const book = {
+        id: uuidv4(),
+        title: e.target.title.value,
+        author: e.target.author.value,
+      };
+      dispatch(addBook(book));
+      e.target.title.value = '';
+      e.target.author.value = '';
     }
   };
 
@@ -33,25 +25,17 @@ const AddBook = (props) => {
         type="text"
         className="input-text"
         placeholder="Enter Title..."
-        value={inputText.title}
         name="title"
-        onChange={onChange}
       />
       <input
         type="text"
         className="input-author"
         placeholder="Enter author..."
-        value={inputText.author}
         name="author"
-        onChange={onChange}
       />
       <button type="submit" className="input-submit">Submit</button>
     </form>
   );
-};
-
-AddBook.propTypes = {
-  addBookProps: PropTypes.func.isRequired,
 };
 
 export default AddBook;
