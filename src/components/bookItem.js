@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../redux/books/books';
+import { asyncRemoveBook } from '../redux/books/actions';
 
 const BookItem = (props) => {
   const { book } = props;
@@ -9,7 +9,10 @@ const BookItem = (props) => {
 
   const dispatch = useDispatch();
   const handleRemove = (book) => {
-    dispatch(removeBook(book));
+    dispatch(asyncRemoveBook(book)).then((response) => {
+      const resp = document.getElementById('resp');
+      resp.innerHTML = response.payload;
+    });
   };
 
   return (
