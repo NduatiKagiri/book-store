@@ -1,21 +1,25 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { asyncAddBook } from '../redux/books/actions';
 
 const AddBook = () => {
   const dispatch = useDispatch();
+  const resp = document.getElementById('resp');
   const handleSubmit = (e) => {
     e.preventDefault();
     if (e.target.title.value && e.target.author.value) {
       const book = {
-        id: uuidv4(),
+        item_id: uuidv4(),
         title: e.target.title.value,
         author: e.target.author.value,
+        category: 'Fiction',
       };
-      dispatch(addBook(book));
-      e.target.title.value = '';
-      e.target.author.value = '';
+      dispatch(asyncAddBook(book)).then((response) => {
+        e.target.title.value = '';
+        e.target.author.value = '';
+        resp.innerHTML = response.payload;
+      });
     }
   };
 
@@ -34,6 +38,7 @@ const AddBook = () => {
         name="author"
       />
       <button type="submit" className="input-submit">Submit</button>
+      <p id="resp" />
     </form>
   );
 };
