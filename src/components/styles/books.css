@@ -1,5 +1,250 @@
+.booksList {
+  width: 84.5%;
+  padding: 2rem 6.25rem;
+  background: #e8e8e8;
+  margin-top: -0.5rem;
+}
+
 .bookItem {
   list-style: none;
   display: flex;
   justify-content: space-around;
+  margin-top: 2rem;
+  background: #fff;
+  padding: 1.8rem 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+}
+
+.bookItem:nth-child(1) {
+  margin-top: 0;
+}
+
+.bookItem:hover {
+  background: #e8e8e8;
+}
+
+.bookInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40%;
+}
+
+.bookDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+}
+
+.category {
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-bottom: -2rem;
+}
+
+.title {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+  margin-bottom: -0.6rem;
+}
+
+.author {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.bookButtons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.bookButtons button {
+  padding-right: 1.05rem;
+  border: none;
+  border-right: 1px solid #e8e8e8;
+  margin-left: 1.05rem;
+  color: #228be6;
+  background: #fff;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-right: 2px solid #e8e8e8;
+  padding-right: 3.5rem;
+}
+
+@keyframes growProgressBar {
+  0%,
+  33% { --pgPercentage: 0; }
+  100% { --pgPercentage: var(--value); }
+}
+
+/* stylelint-disable csstree/validator */
+@property --pgPercentage {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role="progressbar"] {
+  --value: 64;
+  --size: 3.5rem;
+  --fg: #228be6;
+  --bg: #d6d6d6;
+  --pgPercentage: var(--value);
+
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-size: calc(var(--size) / 5);
+  color: var(--fg);
+}
+
+.progressBar {
+  margin-top: -0.2rem;
+  margin-right: 0.8rem;
+}
+
+.completedStatus {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: -3rem;
+}
+
+.completedStatus h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.completedStatus p {
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  text-transform: uppercase;
+  margin-top: -3.2rem;
+}
+
+.chapter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.chapter h6 {
+  opacity: 0.5;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  text-transform: uppercase;
+}
+
+.chapter p {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+  margin-top: -1.5rem;
+}
+
+.chapter button {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  background: #228be6;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+}
+
+.hor-div {
+  width: 84.5%;
+  padding: 0 6.25rem;
+  margin-top: -1rem;
+  margin-bottom: -0.7rem;
+}
+
+.hor {
+  height: 2px;
+}
+
+.bookButtons button:nth-child(1) {
+  margin-left: 0;
+}
+
+.bookButtons button:nth-child(3) {
+  padding-right: 0;
+  border-right: none;
+}
+
+.bookItem:hover .bookButtons button {
+  background: #e8e8e8;
+}
+
+.bookItem:hover .progressBar {
+  background:
+    radial-gradient(closest-side, #e8e8e8 80%, transparent 0 99.9%, white 0),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
 }

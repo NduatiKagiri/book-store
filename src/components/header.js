@@ -5,7 +5,7 @@ class Header extends React.PureComponent {
   render() {
     return (
       <header>
-        <div>
+        <div className="header-logo">
           <Link className="nav-logo" to="/">
             <h3>BookStore CMS</h3>
           </Link>
@@ -15,6 +15,7 @@ class Header extends React.PureComponent {
             <li key="books"><Link to="/" className="nav-link" activeClassName="active-link">Books</Link></li>
             <li key="categories"><Link to="/categories" className="nav-link">Categories</Link></li>
           </ul>
+          <img src="https://nduatikagiri.co.ke/bookstore/user.png" alt="" />
         </nav>
       </header>
     );

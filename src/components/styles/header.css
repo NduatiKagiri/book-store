@@ -1,17 +1,17 @@
 header {
-  width: 88%;
-  height: 65px;
+  width: 84.5%;
+  height: 50px;
   background: #fff 0% 0% no-repeat padding-box;
   box-shadow: 0 3px 15px #00000029;
   opacity: 1;
-  padding: 10px 75px;
+  padding: 1.4rem 6.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header div {
-  width: 40%;
+.header-logo {
+  width: 30%;
 }
 
 .nav-logo {
@@ -31,23 +31,27 @@ header div {
   font-weight: 700;
   font-size: 29px;
   line-height: 20px;
-  color: blue;
+  color: #228be6;
   text-decoration: none;
 }
 
 nav {
-  width: 40%;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav .nav-links-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
 nav .nav-links-list li {
   list-style: none;
   align-items: center;
+  margin-right: 24px;
 }
 
 .nav-link {
@@ -55,9 +59,14 @@ nav .nav-links-list li {
   height: 21px;
   text-align: center;
   text-decoration: none;
-  font: normal normal 600 20px/21px 'Rubik', sans-serif;
-  letter-spacing: 0;
+  font: normal normal 500 20px/21px 'Rubik', sans-serif;
+  letter-spacing: 0.1em;
   color: #000;
   opacity: 1;
   margin-left: 8px;
+}
+
+nav img {
+  width: 24px;
+  height: 24px;
 }
